@@ -4,9 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if4203.galerihewan.databinding.ListItemBinding
-import java.util.zip.Inflater
 
-class MainAdapter(private val data: List<Hewan>) : RecyclerView.Adapter<MainAdapter.ViewHolder>(){
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+
+    private val data = mutableListOf<Hewan>()
+    fun updateData(newData: List<Hewan>) {
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(private val binding: ListItemBinding) :
             RecyclerView.ViewHolder(binding.root){
