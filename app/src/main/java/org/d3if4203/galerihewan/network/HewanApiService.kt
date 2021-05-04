@@ -8,6 +8,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://dif.indraazimi.com/"
+enum class ApiStatus { LOADING, SUCCESS, FAILED }
+
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
